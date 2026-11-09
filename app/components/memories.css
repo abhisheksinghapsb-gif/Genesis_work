@@ -120,6 +120,7 @@
 .memories-icon-button:focus-visible { outline: 3px solid #ffd447; outline-offset: 4px; }
 
 @media (max-width: 767px) {
+  .genesis-memories { margin-bottom: -20svh; }
   .memories-viewport { min-height: 0; }
   .memories-camera { width: 1120px; height: 1180px; }
   .memories-photo { width: clamp(248px, 74vw, 320px); padding: 8px 8px 0; }
@@ -130,7 +131,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .genesis-memories { min-height: 0 !important; }
+  .genesis-memories { min-height: 0 !important; margin-bottom: 0 !important; }
   .memories-viewport { position: relative; height: auto; min-height: 100svh; overflow: hidden; }
   .memories-header { position: relative; height: 100px; }
   .memories-camera {

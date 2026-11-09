@@ -11,6 +11,7 @@ import MemoriesSection from "./components/MemoriesSection";
 import SponsorsSection from "./components/SponsorsSection";
 import FAQSection from "./components/FAQSection";
 import ContactSection from "./components/ContactSection";
+import BrawlSectionDivider from "./components/BrawlSectionDivider";
 
 // Deterministic twinkling stars with individual drift offsets
 const STARS = Array.from({ length: 90 }, (_, i) => ({
@@ -966,23 +967,44 @@ export default function Home() {
     {/* ── LIVE TIMER AT THE HERO / ABOUT BOUNDARY ────────── */}
     <CountdownSection />
 
+    {/* ── DIVIDER: HERO ➔ ABOUT ── */}
+    <BrawlSectionDivider variant="hero-about" />
+
     {/* ── SECTION 2: ABOUT GENESIS (STATIC SECTION) ──────── */}
     <AboutSection />
+
+    {/* ── DIVIDER: ABOUT ➔ TIMELINE ── */}
+    <BrawlSectionDivider variant="about-timeline" />
 
     {/* ── SECTION 3: STATIC TIMELINE FOUNDATION ───────────── */}
     <TimelineSection scrollContainerRef={containerRef} />
 
+    {/* ── DIVIDER: TIMELINE ➔ PRIZE POOL ── */}
+    <BrawlSectionDivider variant="timeline-prizepool" />
+
     {/* ── SECTION 4: PRIZE POOL (INTERACTIVE SHOWCASE) ───── */}
     <PrizePoolSection />
+
+    {/* ── DIVIDER: PRIZE POOL ➔ MEMORIES ── */}
+    <BrawlSectionDivider variant="prizepool-memories" />
 
     {/* ── SECTION 5: MEMORIES (SCROLLAROIDS PHOTO JOURNEY) ─ */}
     <MemoriesSection scrollContainerRef={containerRef} />
 
+    {/* ── DIVIDER: MEMORIES ➔ SPONSORS ── */}
+    <BrawlSectionDivider variant="memories-sponsors" />
+
     {/* ── SECTION 6: SPONSORS (RESPONSIVE SHOWCASE) ──────── */}
     <SponsorsSection />
 
+    {/* ── DIVIDER: SPONSORS ➔ FAQS ── */}
+    <BrawlSectionDivider variant="sponsors-faq" className="my-4 sm:my-6 md:my-0" />
+
     {/* ── SECTION 7: FAQS (INTERACTIVE ACCORDION & CATEGORIES) ─ */}
     <FAQSection />
+
+    {/* ── DIVIDER: FAQS ➔ CONTACT US ── */}
+    <BrawlSectionDivider variant="faq-contact" className="my-4 sm:my-6 md:my-0" />
 
     {/* ── SECTION 8: CONTACT US ──────────────────────────── */}
     <ContactSection />

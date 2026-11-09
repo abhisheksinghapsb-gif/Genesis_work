@@ -66,7 +66,6 @@ export default function SponsorsSection() {
     if (!cards.length) return;
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const cardCenters = new Map<HTMLElement, number>();
     let frame = 0;
 
     const updateCards = () => {
@@ -75,37 +74,21 @@ export default function SponsorsSection() {
         return;
       }
 
-      const activationY = scroller.scrollTop + scroller.clientHeight * 0.58;
-
-      cards.forEach((card) => {
-        const center = cardCenters.get(card);
-        card.classList.toggle(
-          "is-revealed",
-          center !== undefined && activationY >= center,
-        );
-      });
-    };
-
-    const measureCards = () => {
       const scrollerRect = scroller.getBoundingClientRect();
-      cardCenters.clear();
+      const triggerLine = scrollerRect.top + scrollerRect.height * 0.75;
 
       cards.forEach((card) => {
         const rect = card.getBoundingClientRect();
-        const isVisible = rect.width > 0 && rect.height > 0;
-
-        if (!isVisible) {
+        if (rect.width === 0 || rect.height === 0) {
           card.classList.remove("is-revealed");
           return;
         }
 
-        cardCenters.set(
-          card,
-          scroller.scrollTop + rect.top + rect.height / 2 - scrollerRect.top,
+        card.classList.toggle(
+          "is-revealed",
+          rect.top + rect.height * 0.35 <= triggerLine,
         );
       });
-
-      updateCards();
     };
 
     const scheduleUpdate = () => {
@@ -116,30 +99,19 @@ export default function SponsorsSection() {
       });
     };
 
-    const scheduleMeasure = () => {
-      if (frame) window.cancelAnimationFrame(frame);
-      frame = window.requestAnimationFrame(() => {
-        frame = 0;
-        measureCards();
-      });
-    };
-
     section.classList.add("genesis-sponsors-flip-ready");
     scroller.addEventListener("scroll", scheduleUpdate, { passive: true });
-    window.addEventListener("resize", scheduleMeasure, { passive: true });
-    reducedMotion.addEventListener("change", scheduleMeasure);
+    window.addEventListener("resize", scheduleUpdate, { passive: true });
+    reducedMotion.addEventListener("change", scheduleUpdate);
 
-    const resizeObserver = new ResizeObserver(scheduleMeasure);
-    resizeObserver.observe(section);
-    measureCards();
+    updateCards();
 
     return () => {
       section.classList.remove("genesis-sponsors-flip-ready");
       cards.forEach((card) => card.classList.remove("is-revealed"));
       scroller.removeEventListener("scroll", scheduleUpdate);
-      window.removeEventListener("resize", scheduleMeasure);
-      reducedMotion.removeEventListener("change", scheduleMeasure);
-      resizeObserver.disconnect();
+      window.removeEventListener("resize", scheduleUpdate);
+      reducedMotion.removeEventListener("change", scheduleUpdate);
       if (frame) window.cancelAnimationFrame(frame);
     };
   }, []);

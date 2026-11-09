@@ -8,32 +8,36 @@ const stages = [
     title: "Registration",
     sub: "Unstop & IndieConnect",
     asset: "/landing-pages/timeline/stages/stage-registration.svg",
+    backAsset: "/landing-pages/timeline/stages/stage-registration-back.svg",
     side: "left",
-    details: ["Platforms: Unstop & IndieConnect", "Opening date: To be announced", "Closing date: To be announced"],
+    linkUrl: "https://unstop.com/",
   },
   {
     step: "02",
     title: "Round 1 — Online",
     sub: "Online Tournament",
     asset: "/landing-pages/timeline/stages/stage-round1.svg",
+    backAsset: "/landing-pages/timeline/stages/stage-round1-back.svg",
     side: "right",
-    details: ["Format: Online", "Start date: To be announced", "End date: To be announced"],
+    linkUrl: "",
   },
   {
     step: "03",
     title: "Round 2 — Offline",
     sub: "Offline Showdown",
     asset: "/landing-pages/timeline/stages/stage-round2.svg",
+    backAsset: "/landing-pages/timeline/stages/stage-round2-back.svg",
     side: "left",
-    details: ["Format: Offline", "Dates: To be announced", "Venue: To be announced"],
+    linkUrl: "",
   },
   {
     step: "04",
     title: "Results",
     sub: "Grand Champions",
     asset: "/landing-pages/timeline/stages/stage-result.svg",
+    backAsset: "/landing-pages/timeline/stages/stage-result-back.svg",
     side: "right",
-    details: ["Announcement date: To be announced", "Additional details: To be announced"],
+    linkUrl: "",
   },
 ] as const;
 
@@ -91,14 +95,19 @@ export default function TimelineSection({ scrollContainerRef }: TimelineSectionP
       const thresholds = markerCenters.map((center) =>
         clamp((center - firstMarkerY) / (lastMarkerY - firstMarkerY), 0, 1),
       );
-      const currentStage = thresholds.reduce(
-        (current, threshold, index) => (progress >= threshold ? index : current),
-        0,
-      );
+      const currentStage = thresholds.reduce((current, threshold, index) => {
+        const trigger = index === stages.length - 1 ? 0.82 : threshold;
+        return progress >= trigger ? index : current;
+      }, 0);
 
       markers.forEach((marker, index) => {
-        const reached = progress >= thresholds[index] - 0.002;
-        const opened = progress >= thresholds[index] + 0.002;
+        const isLast = index === stages.length - 1;
+        const reached = isLast
+          ? progress >= 0.80
+          : progress >= thresholds[index] - 0.002;
+        const opened = isLast
+          ? progress >= 0.82
+          : progress >= thresholds[index] + 0.002;
 
         marker.classList.toggle("is-reached", reached);
         marker.classList.toggle("is-current", index === currentStage);
@@ -157,53 +166,92 @@ export default function TimelineSection({ scrollContainerRef }: TimelineSectionP
   }, [scrollContainerRef]);
 
   return (
-    <section ref={sectionRef} id="timeline" className="genesis-timeline relative w-full overflow-hidden bg-[#030015] text-white" aria-label="Genesis Event Timeline Roadmap">
+    <section ref={sectionRef} id="timeline" className="genesis-timeline relative w-full overflow-hidden bg-[#030015] text-white pt-24 sm:pt-32 md:pt-40" aria-label="Genesis Event Timeline Roadmap">
       <div className="absolute inset-0 pointer-events-none">
         <img loading="lazy" decoding="async" src="/landing-pages/shared/backgrounds/cosmic-background.webp" alt="" aria-hidden="true" className="h-full w-full object-cover opacity-75" />
-        <div className="absolute inset-0 bg-[#030015]/35" />
+        <div className="absolute inset-0 bg-[#030015]/40" />
       </div>
 
-      <header className="relative z-10 flex justify-center px-4 pt-20 sm:pt-24">
+      {/* Atmospheric Top Gradient Transition to blend smoothly from the About section */}
+      <div
+        className="absolute top-0 inset-x-0 h-40 sm:h-56 bg-gradient-to-b from-[#030015] via-[#030015]/90 to-transparent pointer-events-none z-10"
+        aria-hidden="true"
+      />
+
+      <header className="relative z-10 flex justify-center px-4 pt-14 sm:pt-36 md:pt-44">
         <div className="relative flex items-center justify-center">
           <img loading="lazy" decoding="async" src="/landing-pages/timeline/backgrounds/heading-banner.svg" alt="Tournament Timeline" className="h-12 w-auto sm:h-14 md:h-16" />
           <img loading="lazy" decoding="async" src="/landing-pages/timeline/ui/heading-text.svg" alt="TIMELINE" className="absolute h-6 w-auto sm:h-7 md:h-8" />
         </div>
       </header>
 
-      <div ref={journeyRef} className="genesis-timeline-journey relative z-10 mx-auto mt-8 w-full max-w-6xl px-4 pb-20 sm:px-8 sm:pb-28">
+      <div ref={journeyRef} className="genesis-timeline-journey relative z-10 mx-auto mt-8 w-full max-w-6xl px-4 pb-12 sm:px-8 sm:pb-24 md:pb-32">
         <div ref={trackRef} className="genesis-timeline-track" data-runtime="golden-journey-v1" aria-hidden="true">
           <div className="genesis-timeline-progress-fill" />
           <div className="genesis-timeline-traveling-light" />
         </div>
         <div className="genesis-timeline-stages">
-          {stages.map((stage) => (
-            <article key={stage.step} className={`genesis-timeline-stage genesis-timeline-stage-${stage.side}`}>
-              <div className="genesis-timeline-card">
-                <div className="genesis-timeline-card-inner">
+          {stages.map((stage) => {
+            const cardInner = (
+              <div className="genesis-timeline-card-inner">
+                {/* Back side of card: SVG with exact user design and text */}
                 <div className="genesis-timeline-card-back">
-                  <span className="genesis-timeline-card-step">STAGE {stage.step}</span>
-                  <h3>{stage.title}</h3>
-                  <p className="genesis-timeline-card-subtitle">{stage.sub}</p>
-                  <div className="genesis-timeline-card-details">
-                    {stage.details.map((detail) => <p key={detail}>{detail}</p>)}
-                  </div>
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    src={stage.backAsset}
+                    alt={`${stage.title} — Details`}
+                    draggable={false}
+                    className="h-full w-full object-contain pointer-events-none select-none"
+                  />
                 </div>
+                {/* Front side of card: SVG with artwork */}
                 <div className="genesis-timeline-card-front">
-                <img loading="lazy" decoding="async" src={stage.asset} alt={`${stage.title} — ${stage.sub}`} draggable={false} />
+                  <img
+                    loading="lazy"
+                    decoding="async"
+                    src={stage.asset}
+                    alt={`${stage.title} — ${stage.sub}`}
+                    draggable={false}
+                    className="h-full w-full object-contain pointer-events-none select-none"
+                  />
                 </div>
               </div>
-              </div>
-              <div className="genesis-timeline-marker">
-                <img loading="lazy" decoding="async"
-                  className="genesis-timeline-marker-art"
-                  src={`/landing-pages/timeline/markers/genesis-milestone-${stage.step}.svg`}
-                  alt=""
-                  aria-hidden="true"
-                  draggable={false}
-                />
-              </div>
-            </article>
-          ))}
+            );
+
+            return (
+              <article
+                key={stage.step}
+                className={`genesis-timeline-stage genesis-timeline-stage-${stage.side} genesis-timeline-stage-${stage.step}`}
+                data-step={stage.step}
+              >
+                <div className={`genesis-timeline-card genesis-timeline-card-${stage.step}`}>
+                  {stage.linkUrl ? (
+                    <a
+                      href={stage.linkUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block w-full h-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-400 rounded-xl"
+                      title={`${stage.title} — ${stage.sub}`}
+                    >
+                      {cardInner}
+                    </a>
+                  ) : (
+                    cardInner
+                  )}
+                </div>
+                <div className="genesis-timeline-marker">
+                  <img loading="lazy" decoding="async"
+                    className="genesis-timeline-marker-art"
+                    src={`/landing-pages/timeline/markers/genesis-milestone-${stage.step}.svg`}
+                    alt=""
+                    aria-hidden="true"
+                    draggable={false}
+                  />
+                </div>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -51,7 +51,7 @@ export default function FAQSection() {
   return (
     <section
       id="faq"
-      className="relative z-10 flex min-h-screen w-full shrink-0 select-none flex-col items-center justify-start overflow-x-hidden overflow-y-visible bg-[#030015] px-3 py-12 text-white sm:px-6 sm:py-16 lg:min-h-0 lg:px-8 lg:pt-[clamp(175px,27svh,245px)] lg:pb-[clamp(88px,12svh,136px)]"
+      className="relative z-10 flex min-h-0 w-full shrink-0 select-none flex-col items-center justify-start overflow-x-hidden overflow-y-visible bg-[#030015] px-3 pt-16 pb-28 text-white sm:px-6 sm:pt-24 sm:pb-40 md:min-h-screen md:justify-center md:py-12 lg:min-h-screen lg:justify-center lg:px-8 lg:py-16"
       aria-label="Frequently Asked Questions"
     >
       {/* ── 1. COSMIC BRAWL STARS PATTERN BACKGROUND ── */}
@@ -123,7 +123,7 @@ export default function FAQSection() {
           </nav>
         </div>
 
-        <div className="faq-content-panel relative order-3 flex w-full min-w-0 shrink-0 flex-col items-center lg:order-none lg:col-start-2 lg:row-start-2">
+        <div className="faq-content-panel relative order-3 flex w-full min-w-0 shrink-0 flex-col items-center mt-3 sm:mt-0 lg:mt-0 lg:order-none lg:col-start-2 lg:row-start-2">
           <div
             id="faq-category-panel"
             role="region"

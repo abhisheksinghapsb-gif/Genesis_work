@@ -6,7 +6,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="about-section relative w-full min-h-screen md:h-screen md:max-h-screen flex flex-col justify-start items-start overflow-hidden select-none bg-[#030015] flex-shrink-0"
+      className="about-section relative w-full min-h-screen md:h-screen md:max-h-screen flex flex-col justify-start items-start overflow-hidden select-none bg-[#030015] flex-shrink-0 pb-10 sm:pb-28 md:pb-36"
     >
       {/* ── 1. LAYERED SCENIC BACKGROUND ─────────────────────── */}
       <div className="about-bg-layer absolute inset-0 pointer-events-none overflow-hidden">
@@ -39,10 +39,10 @@ export default function AboutSection() {
         />
 
         {/* Subtle Edge Transitions: Visual continuity between Hero above and Timeline below */}
-        {/* <div
-          className="absolute top-0 inset-x-0 h-40 sm:h-56 bg-gradient-to-b from-[#030015] via-[#030015]/80 to-transparent pointer-events-none z-10"
+        <div
+          className="absolute bottom-0 inset-x-0 h-32 sm:h-48 bg-gradient-to-t from-[#030015] via-[#030015]/85 to-transparent pointer-events-none z-10"
           aria-hidden="true"
-        /> */}
+        />
       </div>
 
       {/* ── 2. FOREGROUND CONTENT (HEADING + INFO PANEL) ──────── */}
