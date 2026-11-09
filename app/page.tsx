@@ -974,7 +974,7 @@ export default function Home() {
     <AboutSection />
 
     {/* ── DIVIDER: ABOUT ➔ TIMELINE ── */}
-    <BrawlSectionDivider variant="about-timeline" className="my-8 sm:my-10 md:my-12 lg:my-14" />
+    <BrawlSectionDivider variant="about-timeline" className="mt-6 sm:mt-8 md:mt-10 mb-3 sm:mb-4 md:mb-5" />
 
     {/* ── SECTION 3: STATIC TIMELINE FOUNDATION ───────────── */}
     <TimelineSection scrollContainerRef={containerRef} />
@@ -998,7 +998,7 @@ export default function Home() {
     <SponsorsSection />
 
     {/* ── DIVIDER: SPONSORS ➔ FAQS ── */}
-    <BrawlSectionDivider variant="sponsors-faq" className="my-8 sm:my-10 md:my-12 lg:my-14" />
+    <BrawlSectionDivider variant="sponsors-faq" className="mt-6 sm:mt-8 md:mt-10 mb-3 sm:mb-4 md:mb-5" />
 
     {/* ── SECTION 7: FAQS (INTERACTIVE ACCORDION & CATEGORIES) ─ */}
     <FAQSection />
