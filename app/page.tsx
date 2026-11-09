@@ -974,7 +974,7 @@ export default function Home() {
     <AboutSection />
 
     {/* ── DIVIDER: ABOUT ➔ TIMELINE ── */}
-    <BrawlSectionDivider variant="about-timeline" className="my-8 sm:my-10 md:my-12 lg:my-14" />
+    <BrawlSectionDivider variant="about-timeline" className="mt-8 sm:mt-10 md:mt-12 lg:mt-14 mb-16 sm:mb-20 md:mb-24 lg:mb-28" />
 
     {/* ── SECTION 3: STATIC TIMELINE FOUNDATION ───────────── */}
     <TimelineSection scrollContainerRef={containerRef} />

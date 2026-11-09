@@ -166,7 +166,7 @@ export default function TimelineSection({ scrollContainerRef }: TimelineSectionP
   }, [scrollContainerRef]);
 
   return (
-    <section ref={sectionRef} id="timeline" className="genesis-timeline relative w-full overflow-hidden bg-[#030015] text-white pt-8 sm:pt-12 md:pt-16 pb-12 sm:pb-20" aria-label="Genesis Event Timeline Roadmap">
+    <section ref={sectionRef} id="timeline" className="genesis-timeline relative w-full overflow-hidden bg-[#030015] text-white pt-16 sm:pt-24 md:pt-32 pb-12 sm:pb-20" aria-label="Genesis Event Timeline Roadmap">
       <div className="absolute inset-0 pointer-events-none">
         <img loading="lazy" decoding="async" src="/landing-pages/shared/backgrounds/cosmic-background.webp" alt="" aria-hidden="true" className="h-full w-full object-cover opacity-75" />
         <div className="absolute inset-0 bg-[#030015]/40" />
@@ -174,11 +174,11 @@ export default function TimelineSection({ scrollContainerRef }: TimelineSectionP
 
       {/* Atmospheric Top Gradient Transition to blend smoothly from the About section */}
       <div
-        className="absolute top-0 inset-x-0 h-40 sm:h-56 bg-gradient-to-b from-[#030015] via-[#030015]/90 to-transparent pointer-events-none z-10"
+        className="absolute top-0 inset-x-0 h-64 sm:h-80 md:h-96 bg-gradient-to-b from-[#030015] via-[#030015]/90 to-transparent pointer-events-none z-10"
         aria-hidden="true"
       />
 
-      <header className="relative z-10 flex justify-center px-4 pt-4 sm:pt-6 md:pt-8 pb-4 sm:pb-6">
+      <header className="relative z-10 flex justify-center px-4 pt-8 sm:pt-12 md:pt-16 pb-4 sm:pb-6">
         <div className="relative flex items-center justify-center">
           <img loading="lazy" decoding="async" src="/landing-pages/timeline/backgrounds/heading-banner.svg" alt="Tournament Timeline" className="h-12 w-auto sm:h-14 md:h-16" />
           <img loading="lazy" decoding="async" src="/landing-pages/timeline/ui/heading-text.svg" alt="TIMELINE" className="absolute h-6 w-auto sm:h-7 md:h-8" />
