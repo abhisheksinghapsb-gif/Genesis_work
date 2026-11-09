@@ -124,7 +124,7 @@ export default function SponsorsSection() {
     <section
       ref={sectionRef}
       id="sponsors"
-      className="genesis-sponsors relative w-screen min-h-screen flex flex-col items-center justify-between overflow-x-hidden overflow-y-visible select-none bg-[#030015] py-4 sm:py-6 md:py-8 px-3 sm:px-6 lg:px-8"
+      className="genesis-sponsors relative w-screen min-h-screen flex flex-col items-center justify-between overflow-x-hidden overflow-y-visible select-none bg-[#030015] pt-8 pb-4 sm:pt-10 sm:pb-6 md:py-8 px-3 sm:px-6 lg:px-8"
       style={{
         background: "radial-gradient(ellipse at 50% 30%, #150a3c 0%, #0c0424 45%, #030014 100%)",
       }}

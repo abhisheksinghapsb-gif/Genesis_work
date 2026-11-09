@@ -222,7 +222,7 @@
 @media (max-width: 480px) {
   .about-section {
     --about-content-left: 16px;
-    --about-content-top: 16px;
+    --about-content-top: 26px;
     --about-heading-left: 0px;
     --about-heading-width: 100%;
     --about-panel-width: 100%;
@@ -241,7 +241,7 @@
 @media (max-width: 360px) {
   .about-section {
     --about-content-left: 10px;
-    --about-content-top: 12px;
+    --about-content-top: 20px;
     --about-panel-padding-top: 38px;
     --about-panel-padding-x: 14px;
     --about-panel-padding-bottom: 18px;
@@ -1025,7 +1025,8 @@ body {
 
 @media (max-width: 767px) {
   .prize-mobile-section {
-    padding-block: clamp(12px, 3vh, 24px);
+    padding-top: clamp(24px, 4vh, 36px);
+    padding-bottom: clamp(12px, 3vh, 24px);
   }
 
   .prize-mobile-centered {
@@ -1125,7 +1126,8 @@ body {
 @media (max-width: 480px) {
   .prize-mobile-section {
     --prize-mobile-side-space: 12px;
-    padding-block: 12px 20px;
+    padding-top: 26px;
+    padding-bottom: 16px;
     gap: 18px;
   }
 

@@ -125,8 +125,8 @@
   .memories-camera { width: 1120px; height: 1180px; }
   .memories-photo { width: clamp(248px, 74vw, 320px); padding: 8px 8px 0; }
   .memories-photo-caption { min-height: 31px; font-size: 15px; }
-  .memories-header { height: 80px; padding: 4px 6px; }
-  .memories-title { top: 3px; width: min(52vw, 290px); }
+  .memories-header { height: 88px; padding: 8px 6px; }
+  .memories-title { top: 16px; width: min(52vw, 290px); }
   .memories-icon-button { width: clamp(42px, 13vw, 64px); }
 }
 

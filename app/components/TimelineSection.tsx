@@ -178,7 +178,7 @@ export default function TimelineSection({ scrollContainerRef }: TimelineSectionP
         aria-hidden="true"
       />
 
-      <header className="relative z-10 flex justify-center px-4 pt-14 sm:pt-36 md:pt-44">
+      <header className="relative z-10 flex justify-center px-4 pt-24 sm:pt-32 md:pt-40">
         <div className="relative flex items-center justify-center">
           <img loading="lazy" decoding="async" src="/landing-pages/timeline/backgrounds/heading-banner.svg" alt="Tournament Timeline" className="h-12 w-auto sm:h-14 md:h-16" />
           <img loading="lazy" decoding="async" src="/landing-pages/timeline/ui/heading-text.svg" alt="TIMELINE" className="absolute h-6 w-auto sm:h-7 md:h-8" />

@@ -968,25 +968,25 @@ export default function Home() {
     <CountdownSection />
 
     {/* ── DIVIDER: HERO ➔ ABOUT ── */}
-    <BrawlSectionDivider variant="hero-about" />
+    <BrawlSectionDivider variant="hero-about" className="my-3 sm:my-5 md:my-0" />
 
     {/* ── SECTION 2: ABOUT GENESIS (STATIC SECTION) ──────── */}
     <AboutSection />
 
     {/* ── DIVIDER: ABOUT ➔ TIMELINE ── */}
-    <BrawlSectionDivider variant="about-timeline" />
+    <BrawlSectionDivider variant="about-timeline" className="my-3 sm:my-5 md:my-0" />
 
     {/* ── SECTION 3: STATIC TIMELINE FOUNDATION ───────────── */}
     <TimelineSection scrollContainerRef={containerRef} />
 
     {/* ── DIVIDER: TIMELINE ➔ PRIZE POOL ── */}
-    <BrawlSectionDivider variant="timeline-prizepool" />
+    <BrawlSectionDivider variant="timeline-prizepool" className="my-3 sm:my-5 md:my-0" />
 
     {/* ── SECTION 4: PRIZE POOL (INTERACTIVE SHOWCASE) ───── */}
     <PrizePoolSection />
 
     {/* ── DIVIDER: PRIZE POOL ➔ MEMORIES ── */}
-    <BrawlSectionDivider variant="prizepool-memories" />
+    <BrawlSectionDivider variant="prizepool-memories" className="my-3 sm:my-5 md:my-0" />
 
     {/* ── SECTION 5: MEMORIES (SCROLLAROIDS PHOTO JOURNEY) ─ */}
     <MemoriesSection scrollContainerRef={containerRef} />
