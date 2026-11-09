@@ -124,7 +124,7 @@ export default function SponsorsSection() {
     <section
       ref={sectionRef}
       id="sponsors"
-      className="genesis-sponsors relative w-screen min-h-screen flex flex-col items-center justify-between overflow-x-hidden overflow-y-visible select-none bg-[#030015] pt-8 pb-4 sm:pt-10 sm:pb-6 md:py-8 px-3 sm:px-6 lg:px-8"
+      className="genesis-sponsors relative w-screen min-h-screen flex flex-col items-center justify-between overflow-x-hidden overflow-y-visible select-none bg-[#030015] pt-10 pb-6 sm:pt-14 sm:pb-8 md:pt-16 md:pb-10 px-3 sm:px-6 lg:px-8"
       style={{
         background: "radial-gradient(ellipse at 50% 30%, #150a3c 0%, #0c0424 45%, #030014 100%)",
       }}
@@ -151,7 +151,7 @@ export default function SponsorsSection() {
       <div className="relative z-10 w-full max-w-[1440px] flex flex-col items-center flex-grow justify-between">
         
         {/* ── 1. Top SPONSORS Header ──────────────────────── */}
-        <header className="relative w-full flex items-center justify-center gap-2 sm:gap-4 md:gap-5 pt-1 pb-3 sm:pb-5 md:pb-6">
+        <header className="relative w-full flex items-center justify-center gap-2 sm:gap-4 md:gap-5 pt-3 pb-6 sm:pb-8 md:pb-10">
           {/* Crown Left with Pop-out Animation */}
           <div className="relative w-[44px] h-[56px] sm:w-[56px] sm:h-[72px] md:w-[68px] md:h-[86px] flex-shrink-0 animate-icon-pop-crown transition-transform duration-200 hover:scale-110 active:scale-95 cursor-default">
             <Image

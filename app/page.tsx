@@ -968,43 +968,43 @@ export default function Home() {
     <CountdownSection />
 
     {/* ── DIVIDER: HERO ➔ ABOUT ── */}
-    <BrawlSectionDivider variant="hero-about" className="my-3 sm:my-5 md:my-0" />
+    <BrawlSectionDivider variant="hero-about" className="my-8 sm:my-10 md:my-12 lg:my-14" />
 
     {/* ── SECTION 2: ABOUT GENESIS (STATIC SECTION) ──────── */}
     <AboutSection />
 
     {/* ── DIVIDER: ABOUT ➔ TIMELINE ── */}
-    <BrawlSectionDivider variant="about-timeline" className="my-3 sm:my-5 md:my-0" />
+    <BrawlSectionDivider variant="about-timeline" className="my-8 sm:my-10 md:my-12 lg:my-14" />
 
     {/* ── SECTION 3: STATIC TIMELINE FOUNDATION ───────────── */}
     <TimelineSection scrollContainerRef={containerRef} />
 
     {/* ── DIVIDER: TIMELINE ➔ PRIZE POOL ── */}
-    <BrawlSectionDivider variant="timeline-prizepool" className="my-3 sm:my-5 md:my-0" />
+    <BrawlSectionDivider variant="timeline-prizepool" className="my-8 sm:my-10 md:my-12 lg:my-14" />
 
     {/* ── SECTION 4: PRIZE POOL (INTERACTIVE SHOWCASE) ───── */}
     <PrizePoolSection />
 
     {/* ── DIVIDER: PRIZE POOL ➔ MEMORIES ── */}
-    <BrawlSectionDivider variant="prizepool-memories" className="my-3 sm:my-5 md:my-0" />
+    <BrawlSectionDivider variant="prizepool-memories" className="my-8 sm:my-10 md:my-12 lg:my-14" />
 
     {/* ── SECTION 5: MEMORIES (SCROLLAROIDS PHOTO JOURNEY) ─ */}
     <MemoriesSection scrollContainerRef={containerRef} />
 
     {/* ── DIVIDER: MEMORIES ➔ SPONSORS ── */}
-    <BrawlSectionDivider variant="memories-sponsors" />
+    <BrawlSectionDivider variant="memories-sponsors" className="my-8 sm:my-10 md:my-12 lg:my-14" />
 
     {/* ── SECTION 6: SPONSORS (RESPONSIVE SHOWCASE) ──────── */}
     <SponsorsSection />
 
     {/* ── DIVIDER: SPONSORS ➔ FAQS ── */}
-    <BrawlSectionDivider variant="sponsors-faq" className="my-4 sm:my-6 md:my-0" />
+    <BrawlSectionDivider variant="sponsors-faq" className="my-8 sm:my-10 md:my-12 lg:my-14" />
 
     {/* ── SECTION 7: FAQS (INTERACTIVE ACCORDION & CATEGORIES) ─ */}
     <FAQSection />
 
     {/* ── DIVIDER: FAQS ➔ CONTACT US ── */}
-    <BrawlSectionDivider variant="faq-contact" className="my-4 sm:my-6 md:my-0" />
+    <BrawlSectionDivider variant="faq-contact" className="my-8 sm:my-10 md:my-12 lg:my-14" />
 
     {/* ── SECTION 8: CONTACT US ──────────────────────────── */}
     <ContactSection />

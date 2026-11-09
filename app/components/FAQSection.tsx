@@ -51,7 +51,7 @@ export default function FAQSection() {
   return (
     <section
       id="faq"
-      className="relative z-10 flex min-h-0 w-full shrink-0 select-none flex-col items-center justify-start overflow-x-hidden overflow-y-visible bg-[#030015] px-3 pt-16 pb-28 text-white sm:px-6 sm:pt-24 sm:pb-40 md:min-h-screen md:justify-center md:py-12 lg:min-h-screen lg:justify-center lg:px-8 lg:py-16"
+      className="relative z-10 flex min-h-0 w-full shrink-0 select-none flex-col items-center justify-start overflow-x-hidden overflow-y-visible bg-[#030015] px-3 pt-12 pb-24 text-white sm:px-6 sm:pt-16 sm:pb-32 md:min-h-screen md:justify-center md:py-16 lg:min-h-screen lg:justify-center lg:px-8 lg:py-20"
       aria-label="Frequently Asked Questions"
     >
       {/* ── 1. COSMIC BRAWL STARS PATTERN BACKGROUND ── */}

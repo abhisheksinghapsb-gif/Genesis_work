@@ -122,7 +122,7 @@ export default function BrawlSectionDivider({
     <div
       role="separator"
       aria-hidden="true"
-      className={`brawl-section-divider relative z-25 w-full flex-shrink-0 select-none overflow-visible ${className}`}
+      className={`brawl-section-divider relative z-25 w-full flex-shrink-0 select-none overflow-visible my-8 sm:my-10 md:my-12 lg:my-14 ${className}`}
     >
       {/* ── Main Divider Bar Container ── */}
       <div className="relative w-full h-[54px] sm:h-[62px] md:h-[70px] bg-gradient-to-b from-[#02000c] via-[#090422] to-[#02000c] flex items-center justify-center">
